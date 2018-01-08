@@ -1,0 +1,75 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Customer Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <ion-list>
+    <ion-item-sliding *ngFor="let item of currentItems">
+      <button ion-item (click)="openItem(item)">
+        <ion-avatar item-start>
+          <img [src]="item.profilePic" />
+        </ion-avatar>
+        <h2>{{item.name}}</h2>
+        <p>{{item.about}}</p>
+        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+      </button>
+
+      <ion-item-options>
+        <button ion-button color="danger" (click)="deleteItem(item)">
+          {{ 'DELETE_BUTTON' | translate }}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list> -->
+  <ion-slides pager style="height:20vh">
+
+    <ion-slide style="background-image: url('http://www.coca-colacompany.com/content/dam/journey/us/en/private/2015/02/1991-print-ad-1280-673-bcb7d268.jpg');background-size: cover;background-position: fixed;">
+      <!-- <h2>Slide 1</h2> -->
+    </ion-slide>
+
+    <ion-slide style="background-image: url('https://s-media-cache-ak0.pinimg.com/originals/b6/d9/4b/b6d94befd2c4a8ee5b19e2285ce9f4d8.jpg');background-size: cover;background-position: fixed;">
+      <!-- <h2>Slide 2</h2> -->
+    </ion-slide>
+
+    <ion-slide style="background-image: url('http://www.songspub.com/content/songspub/news/5flavormenu_665x443.jpg');background-size: cover;background-position: fixed;">
+      <!-- <h2>Slide 3</h2> -->
+    </ion-slide>
+
+  </ion-slides>
+
+  <form (submit)="customerName()">
+    <ion-item>
+      <ion-label>Name: </ion-label>
+      <ion-input type="text" [(ngModel)]="order.customer_name" name="customer_name"></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Table Number: </ion-label>
+        <!-- <ion-input type="text" [(ngModel)]="order.table" name="customer_name"></ion-input> -->
+        <ion-select>
+          <ion-option>
+            1
+          </ion-option>
+          <ion-option>
+            2
+          </ion-option>
+          <ion-option>
+            3
+          </ion-option>
+          <ion-option>
+            4
+          </ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button color="primary" block>Enter</button>
+  </form>
+
+</ion-content>
